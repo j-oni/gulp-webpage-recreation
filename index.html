@@ -16,7 +16,7 @@
       <li><a href="#">Twitter</a></li>
       <li><a href="#">Contribute</a></li>
     </ul>
-    <h1 class="heading">Automate and enchance your workflow</h1>
+    <h1 class="heading">Automate and enhance your workflow</h1>
     <div class="computer">
       <div class="code">
         <span class="code-line">$ npm install gulp-cli -g</span>
@@ -25,8 +25,91 @@
         <span class="code-line">$ gulp --help</span>
       </div>
     </div>
-    <h2>gulp is a toolkit for automating painful of time-consuming tasks in your developement workflow, so you can stop messing around and build something.</h2>
+    <h2 class="paragraph">gulp is a toolkit for automating painful of time-consuming tasks in your developement workflow, so you can stop messing around and build something.</h2>
     <button class="button">get started</button>
   </header>
+  <section class="description">
+    <div class="panel">
+      <img src="https://gulpjs.com/img/browser.svg" alt="browser">
+      <h3>Simple Usage</h3>
+      <p>By preferring code over configuration, node bes practices, and a minimal API surface - gulp makes things simple like never before.</p>
+    </div>
+    <div class="panel">
+      <img src="https://gulpjs.com/img/guage.svg" alt="guage">
+      <h3>Efficient Builds</h3>
+      <p>Using the power of node streams, gulp gives you fast builds that don't write intermediary files to disk.</p>
+    </div>
+    <div class="panel">
+      <img src="https://gulpjs.com/img/atom.svg" alt="atom">
+      <h3>Quality Ecosystem</h3>
+      <p>Be enforcing strict guidelines, we ensure our plugins stay simple and work as expected.</p>
+    </div>
+  </section>
+  <section class="gulpfile">
+    <div class="editor">
+      <div class="heading">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <h3 class="file-title">gulpfile.js</h3>
+      </div>
+      <pre class="pre">
+<span class="decl">var</span> gulp = <span class="req">require</span>(<span class="str">'gulp'</span>);
+<span class="decl">var</span> pug = 
+  <span class="req">require</span>(<span class="str">'gulp-pug'</span>);
+<span class="decl">var</span> less = 
+  <span class="req">require</span>(<span class="str">'gulp-less'</span>);
+<span class="decl">var</span> minifyCSS = 
+  <span class="req">require</span>(<span class="str">'gulp-csso'</span>);
+
+gulp.task(<span class="str">'html'</span>, <span class="decl">function</span>(){
+  <span class="decl">return</span> gulp.src(
+      <span class="str">'client/templates/*.pug'</span>
+    )
+    .pipe(pug())
+    .pipe(gulp.dest(
+      <span class="str">'build/html'</span>
+    ))
+});
+
+gulp.task(<span class="str">'css'</span>, <span class="decl">function</span>(){
+  <span class="decl">return</span> gulp.src(
+      <span class="str">'client/templates/*.less'</span>
+    )
+    .pipe(less())
+    .pipe(minifyCSS())
+    .pipe(gulp.dest(
+      <span class="str">'build/css'</span>
+    ))
+});
+
+gulp.task('default', 
+  [ <span class="str">'html'</span>, <span class="str">'css'</span> ]
+);
+      </pre>
+    </div>
+  </section>
+  <section class="quote">
+    <h3>"Builds can be the most awful sinkhole for teams to waste their time with - gulp is a serious win dor any project."</h3>
+    <footer>Eric, Co-founder @ stae</footer>
+  </section>
+  <section class="backer">
+    <h3>Become a backer</h3>
+    <p>Support the community and keep developement going strong.</p>
+    <button class="button">Donate</button>
+    <h3>Backers & Sponsors</h3>
+    <div class="grid">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/50d34300-e719-11e6-8f71-e12ba1ad8ee3.png" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/8e9cfe00-25ae-11e7-8c00-677620cd0201.png" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/09d57c90-637c-11e7-9ed2-bfa12b0351e8.jpg" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/unixstickerscom_585978f0-8c15-11e7-9cb4-07796fd41740.png" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/imagejpeg_2e64cf80-4342-11e6-b78c-1f0f6e5a6257.jpeg" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/130370ac0dd54678af687cc06f5e3f11_41032e40-8061-11e7-a43c-33b9b6f82c7f.png" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/2d6b4a00-1709-11e7-9b5a-89d03aeb3ad4.png" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/99cc958740fd40038187254559bbb28f_c0dbca90-43ff-11e6-b075-6f299b295357.jpeg" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/trianglelargepaddedpng_2cec3190-498a-11e6-9396-6b86cd6ffe3e.png" alt="">
+      <img src="https://opencollective-production.s3-us-west-1.amazonaws.com/61ba1dd8b7e06c645ea591786c829ecf_62d79570-9565-11e6-add0-93faa9a7296f.jpeg" alt="">
+    </div>
+  </section>
 </body>
 </html>

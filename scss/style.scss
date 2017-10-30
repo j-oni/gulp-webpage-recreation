@@ -1,6 +1,6 @@
 .header {
   background-color: #CF4647;
-  padding-top: 20px;
+  padding: 20px 0 60px;
   color: white;
 }
 
@@ -21,31 +21,205 @@
   }
 }
 
-.heading {
+h1.heading {
   margin: 60px auto 0;
-  width: 320px;
-  height: 120px;
+  width: calc(100vw - 40px);
   text-align: center;
   font-size: 32px;
 }
 
 .computer {
   margin: 60px auto 0;
-  width: 320px;
-  height: 200px;
+  padding: 20px;
+  width: calc(100vw - 40px);
+  height: calc((100vw - 80px) * 0.75);
   background: linear-gradient(to bottom,rgba(247,251,254,1) 0%,rgba(221,226,232,1) 100%);
+  box-shadow: inset 0 2px 7px 1px rgba(255,255,255,.5), inset 0 -5px 20px rgba(187,200,225,.35), 0 2px 6px rgba(40,39,66,.14), 0 10px 20px rgba(40,39,66,.06), 76px 75px 169px -35px rgba(0,0,0,0.4);
   border-radius: 18px;
+  position: relative;
+  &::before, &::after {
+    width: calc(100% + 40px);
+    height: 8px;
+    left: 50%;
+    margin-left: calc(-50% - 20px);
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right,rgba(246,250,253,1) 0%,rgba(221,226,233,1) 6%,rgba(246,250,253,1) 15%,rgba(246,250,253,1) 42%,rgba(230,230,230,1) 42%,rgba(246,250,253,1) 45%,rgba(246,250,253,1) 53%,rgba(230,230,230,1) 56%,rgba(246,250,253,1) 56%,rgba(246,250,253,1) 85%,rgba(221,226,233,1) 94%,rgba(246,250,253,1) 100%);
+  }
+  &::after {
+    top: calc(98% + 6px);
+    background: #dde2e9;
+    box-shadow: inset 0px -25px 10px -20px rgba(0,0,0,.5);
+  }
+  &::before {
+    top: 98%;
+    background: linear-gradient(to right,rgba(246,250,253,1) 0%,rgba(221,226,233,1) 6%,rgba(246,250,253,1) 15%,rgba(246,250,253,1) 42%,rgba(230,230,230,1) 42%,rgba(246,250,253,1) 45%,rgba(246,250,253,1) 53%,rgba(230,230,230,1) 56%,rgba(246,250,253,1) 56%,rgba(246,250,253,1) 85%,rgba(221,226,233,1) 94%,rgba(246,250,253,1) 100%);
+
+  }
 }
 
 .code {
-  position: relative;
-  left: 20px;
-  top: 18px;
-  width: 280px;
-  height: 170px;
+  height: 100%;
+  padding: 25px 0 0 20px;
   background-color: #002b36;
   color: #85FF00;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+}
+
+.code-line {
+  font-family: Menlo,'DejaVu Sans Mono','Lucida Console',monospace;
+  font-size: 13pt;
+  line-height: 15pt;
+}
+
+.paragraph {
+  margin: 60px 20px 0;
+  text-align: center;
+  font-size: 17px;
+  line-height: 32px;
+}
+
+.button {
+  max-width: 200px;
+  background-color: white;
+  color: #CF4647;
+  border: none;
+  border-radius: 5px;
+  display: block;
+  width: calc(100% - 40px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 40px auto;
+}
+
+.description {
+  background-color: white;
+  padding: 80px 20px;
+}
+
+.panel {
+  text-align: center;
+  img {
+    margin: auto;
+    padding: 20px;
+  }
+  p {
+    font-size: 18px;
+    text-align: left;
+    color: rgba(0,0,0,.5)
+  }
+}
+
+.gulpfile {
+  background: #3A3E64;
+  padding: 80px 20px 100px;
+  color: white;
+}
+
+div.heading {
+  height: 50px;
+  padding: 0 10px;
+  background: #E5E4E4;
+  display: flex;
+  align-items: center;
+  border-radius: 5px 5px 0 0;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  background-color: red;
+  border-radius: 50%;
+  &:nth-child(2) {
+    background-color: yellow;
+  }
+  &:nth-child(3) {
+    background-color: green;
+  }
+}
+
+.file-title {  
+  color: #141414;
+  margin: 0 0 0 10px;
+  font-family: Menlo,'DejaVu Sans Mono','Lucida Console',monospace;
+  font-size: 12pt;
+  font-weight: 600;
+}
+
+.pre {
+  background: #111;
+  padding: 20px;
+  color: rgba(255,255,255,0.6);
+  font-size: 13pt;
+  line-height: 15pt;
+}
+
+.str {
+  color: rgba(130,140,91,1);
+}
+
+.decl {
+  color: rgba(195,154,78,1);
+}
+
+.req {
+  color: rgba(112,75,40,1);
+}
+
+.oss {
+  // display: none;
+  & + span {
+    padding-left: 10px;
+  }
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: inherit;
+}
+
+.quote {
+  padding: 80px 20px 100px;
+  text-align: center;
+  footer {
+    color: rgba(0,0,0,.5);
+    font-size: 17px;
+    margin-top: 20px;
+    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  }
+}
+
+.backer {
+  padding: 80px 20px 100px;  
+  background-color: #CF4647;
+  color: white;
+}
+
+.backer p {
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 32px;
+  text-align: center
+}
+
+.grid {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  img {
+    height: 80px;
+    width: 80px;
+    margin: 8px;
+    background-color: white;
+    border-radius: 4px;
+  }
 }
